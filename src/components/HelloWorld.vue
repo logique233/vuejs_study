@@ -1,12 +1,13 @@
 <template>
-  <div class="hello" >
+  <div class="hello">
     <h1>{{ msg.split('').reverse().join('') }}</h1>
     <h2>Essential Links</h2>
     <ul>
-      <li v-for="item in items" :key="item">
-        <a href="http://www.baidu.com">
-          {{ item.msg1 }}
-          </a>
+      <li
+        v-for="item in items"
+        :key="item"
+      >
+        <a v-bind:href="item.url">{{ item.msg1 }}</a>
       </li>
     </ul>
     <button v-on:click="counter += 1">Add 1</button>
@@ -21,11 +22,11 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       items: [
-        {msg1: '9'},
-        {msg1: '2'},
-        {msg1: '3'},
-        {msg1: '4'},
-        {msg1: '5'}
+        { msg1: '1', url: 'http://www.baidu.com' },
+        { msg1: '2', url: 'http://www.baidu.com' },
+        { msg1: '3', url: 'http://www.baidu.com' },
+        { msg1: '4', url: 'http://www.baidu.com' },
+        { msg1: '5', url: 'http://www.baidu.com' }
       ],
       counter: 0
     }
@@ -35,7 +36,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
