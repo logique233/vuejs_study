@@ -59,6 +59,10 @@ typings/
 
 # next.js build output
 .next
+<<<<<<< HEAD
 .vscode
 dist
 package-lock.json
+=======
+.vscode
+>>>>>>> parent of c528bfb... :wrench:
