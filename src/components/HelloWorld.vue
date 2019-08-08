@@ -1,13 +1,25 @@
 <template>
-  <div class="demo-image">
-    <h1>{{ msg }}</h1>
-    <el-button v-on:click="get" icon="el-icon-search">button</el-button>
-    <WeatherTable :data="WeatherData.data"/>
+  <div>
+    <el-container>
+      <el-container>
+        <el-header>
+          <h1>{{ msg }}</h1>
+        </el-header>
+        <el-main>
+          <WeatherTable :data="WeatherData.data" />
+          <WeatherCard/>
+        </el-main>
+        <el-footer>
+          <el-button v-on:click="get" icon="el-icon-search">button</el-button>
+        </el-footer>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
 <script>
 import WeatherTable from "./WeatherTable";
+import WeatherCard from "./WeatherCard";
 export default {
   name: "HelloWorld",
   data() {
@@ -18,6 +30,7 @@ export default {
   },
   components: {
     WeatherTable,
+    WeatherCard
   },
   methods: {
     get: function() {
@@ -53,5 +66,17 @@ li {
 }
 a {
   color: #42b983;
+}
+.el-header,
+.el-footer {
+  background-color: #b3c0d1;
+  color: #333;
+  text-align: center;
+  line-height: 60px;
+}
+.el-main {
+  background-color: rgb(0, 0, 0);
+  color: #333;
+  text-align: center;
 }
 </style>
