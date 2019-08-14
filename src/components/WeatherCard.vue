@@ -1,19 +1,12 @@
 
 <template>
-  <div>
-    <el-row>
-      <el-col :span="80" v-for="(o, index) in 7" :key="o" :offset="index > 0 ? 1 : 0">
-        <el-card :body-style="{ padding: '0px' }">
-          <img src="../assets\rose\5.png" class="image" />
-          <div style="padding: 14px;">
-            <span>好吃的汉堡</span>
-            <div class="bottom clearfix">
-              <el-button type="text" class="button">操作按钮</el-button>
-            </div>
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
+  <div class="card">
+    <el-card :body-style="{ padding: '0px' }">
+      <img :src="img" class="image" />
+      <div style="padding: 14px;">
+        <span>{{currentDate}}</span>
+      </div>
+    </el-card>
   </div>
 </template>
 
@@ -21,41 +14,34 @@
 export default {
   data() {
     return {
+      img: require('../assets/rose/0.png'),
       currentDate: new Date()
     };
+  },
+  mounted() {
+    let _this = this; // 声明一个变量指向Vue实例this，保证作用域一致
+    this.timer = setInterval(() => {
+      _this.currentDate = new Date(); // 修改数据date
+    }, 1000);
+  },
+  beforeDestroy() {
+    if (this.timer) {
+      clearInterval(this.timer); // 在Vue实例销毁前，清除我们的定时器
+    }
   }
 };
 </script>
 
-<style>
-.time {
-  font-size: 13px;
-  color: #999;
+<style scoped>
+.el-card {
+  background: cornflowerblue;
 }
-
-.bottom {
-  margin-top: 13px;
-  line-height: 12px;
+.card {
+  margin: 140px 20px 10px 20px;
 }
-
-.button {
-  padding: 0;
-  float: right;
-}
-
 .image {
   width: 100%;
   display: block;
-}
-
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-}
-
-.clearfix:after {
-  clear: both;
 }
 </style>
 

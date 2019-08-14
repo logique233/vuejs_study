@@ -7,7 +7,17 @@
         </el-header>
         <el-main>
           <WeatherTable :data="WeatherData.data" />
-          <WeatherCard/>
+          <div>
+            <div class="card">
+              <WeatherCard />
+            </div>
+            <div class="card">
+              <WeatherCard />
+            </div>
+            <div class="card">
+              <WeatherCard />
+            </div>
+          </div>
         </el-main>
         <el-footer>
           <el-button v-on:click="get" icon="el-icon-search">button</el-button>
@@ -53,20 +63,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 .el-header,
 .el-footer {
   background-color: #b3c0d1;
@@ -78,5 +74,12 @@ a {
   background-color: rgb(0, 0, 0);
   color: #333;
   text-align: center;
+  height: 900px;
+}
+.card {
+  width: 486px;
+  height: 600px;
+  margin-right: 20px;
+  float: left;
 }
 </style>
