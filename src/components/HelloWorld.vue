@@ -74,7 +74,7 @@ export default {
   background-color: rgb(0, 0, 0);
   color: #333;
   text-align: center;
-  height: 900px;
+  height: 1000px;
 }
 .card {
   width: 486px;
