@@ -2,8 +2,16 @@
 <template>
   <div class="card">
     <el-card :body-style="{ padding: '0px' }">
-      <div style="padding: 14px;">
-        <img :src="img" class="image" />
+      <div style="padding: 14px;" class="image">
+        <div>
+          <img :src="img" class="weathericon" />
+        </div>
+        <div>
+          <img :src="img" class="weathericon" />
+        </div>
+        <div>
+          <img :src="img" class="weathericon" />
+        </div>
       </div>
       <div style="padding: 15px; background-color: rgb(0, 235, 10);">
         <span>{{currentDate}}</span>
@@ -54,12 +62,18 @@ export default {
 }
 .card {
   margin: 140px 20px 10px 20px;
+  height: 900px;
 }
 .image {
-  width: 100%;
+  /* width: 450px; */
+  height: 500px;
   /* display: block; */
   /* opacity:0.5; */
-  background-color: rgb(220, 235, 10);
+  background-color: rgba(16, 224, 207, 0.623);
+  margin: 5px;
+}
+.weathericon {
+  height: 180px;
 }
 </style>
 

@@ -79,7 +79,7 @@ export default {
 .card {
   width: 486px;
   height: 600px;
-  margin-right: 20px;
+  margin-right: 10px;
   float: left;
 }
 </style>
